@@ -42,7 +42,7 @@ else:
     
     print('Create taggedNews')
 
-taggedNews = mydb['taggedNews')
+taggedNews = mydb['taggedNews']
 
 temp = mycol.find()
 for document in temp:
