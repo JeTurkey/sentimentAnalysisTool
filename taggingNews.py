@@ -48,8 +48,11 @@ temp = mycol.find()
 for document in temp:
     firmsTag = []
     for firm in firms:
-        if firm in document['content']:
-            firmsTag.append(firm)
+        try:
+            if firm in document['content']:
+                firmsTag.append(firm)
+        except:
+            pass
     document['firmsTag'] = firmsTag
     if len(firmsTag) > 0:
         taggedNews.insert_one(document)
