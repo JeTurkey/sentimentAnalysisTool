@@ -36,10 +36,13 @@ mycol = mydb["news"]
 
 cList = mydb.list_collection_names()
 if 'taggedNews' in cList:
+
     print('taggedNews exsited')
 else:
-    taggedNews = mydb['taggedNews']
+    
     print('Create taggedNews')
+
+taggedNews = mydb['taggedNews')
 
 temp = mycol.find()
 for document in temp:
