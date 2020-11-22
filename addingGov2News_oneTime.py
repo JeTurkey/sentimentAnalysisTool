@@ -2,7 +2,7 @@ import mysql.connector
 
 mydb  = mysql.connector.connect(
     host='rm-bp11g1acc24v9f69t1o.mysql.rds.aliyuncs.com',
-    username='rayshi',
+    user='rayshi',
     password='Rayshi1994',
     database='ttd',
     auth_plugin='mysql_native_password'
