@@ -38,7 +38,7 @@ for line in result:
                     val = (ind_to_dept[nick], line[0])
                     mycursor.execute(sql, val)
                     mydb.commit()
-                    
+                    break
                 except:
                     pass
                 

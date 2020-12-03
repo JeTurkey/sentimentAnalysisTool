@@ -3,7 +3,7 @@ import mysql.connector
 mydb  = mysql.connector.connect(
     host='rm-bp11g1acc24v9f69t1o.mysql.rds.aliyuncs.com',
     user='rayshi',
-    password='Rayshi1994',
+    password='Rayshi1994!',
     database='ttd',
     auth_plugin='mysql_native_password'
 )
@@ -14,7 +14,7 @@ mycursor.execute('SELECT * FROM ttd.news')
 
 result = mycursor.fetchall()
 
-sql = 'SELECT * FROM government_dept'
+sql = 'SELECT * FROM ttd.gov_dept'
 
 mycursor.execute(sql)
 
@@ -29,7 +29,7 @@ for line in gov_dept:
 
 # building gov_news talbe
 
-for line in result[:10]:
+for line in result:
     for nick in dept_to_nick:
         for name in dept_to_nick[nick]:
             if name in line[1] or name in line[4]:
@@ -38,7 +38,7 @@ for line in result[:10]:
                     val = (ind_to_dept[nick], line[0])
                     mycursor.execute(sql, val)
                     mydb.commit()
-                    
+                    break
                 except:
                     pass
                 
