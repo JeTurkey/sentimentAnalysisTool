@@ -98,5 +98,10 @@ def tagging():
 
 schedule.every().hour.do(tagging)
 
-while True:
-    schedule.run_pending()
+
+if __name__ == "__main__":
+    print('Running...')
+    while True:
+        print(time.localtime())
+        schedule.run_pending()
+    
