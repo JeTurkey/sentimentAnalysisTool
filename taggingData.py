@@ -104,4 +104,5 @@ if __name__ == "__main__":
     while True:
         print(time.localtime())
         schedule.run_pending()
+        time.sleep(3600)
     
