@@ -188,6 +188,8 @@ def tagging():
     print('tag Company Done')
     tagGovOnNews()
     print('Tag Gov On News Done')
+    tagComOnNews()
+    print('Tag Com On News Done')
 
 
 
