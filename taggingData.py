@@ -186,10 +186,10 @@ def tagging():
     print('tag Government Done')
     tagCom()
     print('tag Company Done')
-    tagGovOnNews()
-    print('Tag Gov On News Done')
-    tagComOnNews()
-    print('Tag Com On News Done')
+    # tagGovOnNews()
+    # print('Tag Gov On News Done')
+    # tagComOnNews()
+    # print('Tag Com On News Done')
 
 
 
