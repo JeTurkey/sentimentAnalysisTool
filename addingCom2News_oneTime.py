@@ -32,7 +32,7 @@ for line in gov_dept:
 for line in result:
     for nick in dept_to_nick:
         for name in dept_to_nick[nick]:
-            if name in line[1] or name in line[4]:
+            if str(name) in line[1] or str(name) in line[4]:
                 try:
                     sql = "INSERT INTO ttd.com_news VALUES (%s, %s)"
                     val = (ind_to_dept[nick], line[0])

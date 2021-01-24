@@ -14,7 +14,7 @@ mycursor.execute('SELECT * FROM ttd.news')
 
 result = mycursor.fetchall()
 
-sql = 'SELECT * FROM ttd.gov_dept'
+sql = 'SELECT * FROM ttd.topic'
 
 mycursor.execute(sql)
 
@@ -34,7 +34,7 @@ for line in result:
         for name in dept_to_nick[nick]:
             if str(name) in line[1] or str(name) in line[4]:
                 try:
-                    sql = "INSERT INTO ttd.gov_news VALUES (%s, %s)"
+                    sql = "INSERT INTO ttd.topic_news VALUES (%s, %s)"
                     val = (ind_to_dept[nick], line[0])
                     mycursor.execute(sql, val)
                     mydb.commit()
