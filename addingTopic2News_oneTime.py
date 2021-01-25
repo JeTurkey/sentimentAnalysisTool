@@ -34,8 +34,8 @@ for line in result:
         for name in dept_to_nick[nick]:
             if str(name) in line[1] or str(name) in line[4]:
                 try:
-                    sql = "INSERT INTO ttd.topic_news VALUES (%s, %s)"
-                    val = (ind_to_dept[nick], line[0])
+                    sql = "INSERT INTO ttd.topic_news (topic_id, news_id, news_date) VALUES (%s, %s, %s)"
+                    val = (ind_to_dept[nick], line[0], line[3])
                     mycursor.execute(sql, val)
                     mydb.commit()
                     break

@@ -14,11 +14,15 @@ mycursor.execute('SELECT * FROM ttd.news')
 
 result = mycursor.fetchall()
 
+print('All news has been fetched')
+
 sql = 'SELECT * FROM ttd.company'
 
 mycursor.execute(sql)
 
 gov_dept = mycursor.fetchall()
+
+print('All company has been fetched')
 
 # Turn government department into dict
 ind_to_dept = {}
@@ -29,13 +33,13 @@ for line in gov_dept:
 
 # building gov_news talbe
 
-for line in result:
+for line in result[:100]:
     for nick in dept_to_nick:
         for name in dept_to_nick[nick]:
             if str(name) in line[1] or str(name) in line[4]:
                 try:
-                    sql = "INSERT INTO ttd.com_news VALUES (%s, %s)"
-                    val = (ind_to_dept[nick], line[0])
+                    sql = "INSERT INTO ttd.com_news (com_id, news_id, news_date) VALUES (%s, %s, %s)"
+                    val = (ind_to_dept[nick], line[0], line[3])
                     mycursor.execute(sql, val)
                     mydb.commit()
                     break

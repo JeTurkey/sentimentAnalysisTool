@@ -33,8 +33,8 @@ def tagGov():
             for name in dept_to_nick[nick]:
                 if name in line[1] or name in line[4]:
                     try:
-                        sql = "INSERT INTO gov_news VALUES (%s, %s)"
-                        val = (ind_to_dept[nick], line[0])
+                        sql = "INSERT INTO gov_news (gov_dept_id, news_id, news_date) VALUES (%s, %s, %s)"
+                        val = (ind_to_dept[nick], line[0], line[3])
                         mycursor.execute(sql, val)
                         mydb.commit()
                         break
@@ -75,8 +75,8 @@ def tagCom():
             for name in dept_to_nick[nick]:
                 if name in line[1] or name in line[4]:
                     try:
-                        sql = "INSERT INTO ttd.com_news VALUES (%s, %s)"
-                        val = (ind_to_dept[nick], line[0])
+                        sql = "INSERT INTO ttd.com_news (com_id, news_id, news_date) VALUES (%s, %s, %s)"
+                        val = (ind_to_dept[nick], line[0], line[3])
                         mycursor.execute(sql, val)
                         mydb.commit()
                         break
@@ -116,8 +116,8 @@ def tagTopic():
             for name in dept_to_nick[nick]:
                 if name in line[1] or name in line[4]:
                     try:
-                        sql = "INSERT INTO ttd.topic_news VALUES (%s, %s)"
-                        val = (ind_to_dept[nick], line[0])
+                        sql = "INSERT INTO ttd.topic_news (topic_id, news_id, news_date) VALUES (%s, %s, %s)"
+                        val = (ind_to_dept[nick], line[0], line[3])
                         mycursor.execute(sql, val)
                         mydb.commit()
                         break
