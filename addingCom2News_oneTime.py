@@ -33,7 +33,7 @@ for line in gov_dept:
 
 # building gov_news talbe
 
-for line in result[:100]:
+for line in result:
     for nick in dept_to_nick:
         for name in dept_to_nick[nick]:
             if str(name) in line[1] or str(name) in line[4]:
